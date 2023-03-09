@@ -17,7 +17,7 @@ spring:
         - id: eureka
           uri: lb://eureka-server
           predicates:
-            - Path=/eureka
+            - Path=/eureka/
         
 info:
   app:
