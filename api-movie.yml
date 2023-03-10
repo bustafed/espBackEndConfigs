@@ -13,7 +13,6 @@ spring:
     generate-ddl: true
     show-sql: true
 eureka:
-   renewalPercentThreshold: 0.85
    instance:
      hostname: localhost
      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
