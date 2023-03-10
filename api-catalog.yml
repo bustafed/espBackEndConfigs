@@ -4,7 +4,6 @@ spring:
   application:
     name: api-catalog
 eureka:
-   renewalPercentThreshold: 0.85
    instance:
      hostname: localhost
      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
