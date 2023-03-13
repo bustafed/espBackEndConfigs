@@ -9,7 +9,14 @@ spring:
       discovery:
         locator:
           enabled: true
+      default-filters:
+        -LogFilter
+        -TokenRelay
       routes:
+        - id: accountRoute
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/auth/**
         - id: mscatalog
           uri: lb://api-catalog
           predicates:
