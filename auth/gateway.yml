@@ -28,6 +28,8 @@ spring:
           google:
             client-id: 170735827649-158cmruordmce5t320jrk477lh9cl3pq.apps.googleusercontent.com
             client-secret: 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
+            scope: openid
+            redirect_uri: http://localhost:8080/login/oauth2/code/google
         
 info:
   app:
