@@ -9,9 +9,6 @@ spring:
       discovery:
         locator:
           enabled: true
-      default-filters:
-        -LogFilter
-        -TokenRelay
       routes:
         - id: accountRoute
           uri: http://localhost:8080/
