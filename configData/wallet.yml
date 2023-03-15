@@ -36,7 +36,7 @@ eureka:
 resilience4j:
   circuitbreaker:
     instances:
-      subscription:
+      customer:
         slidingWindowType: COUNT_BASED
         failureRateThreshold: '50'
         automaticTransitionFromOpenToHalfOpenEnabled: 'true'
@@ -47,7 +47,7 @@ resilience4j:
         waitDurationInOpenState: '15000'
   retry:
     instances:
-      subscription:
+      customer:
         maxAttempts: '3'
         waitDuration: '1000'
         retryExceptions[0]: feign.FeignException$InternalServerError
