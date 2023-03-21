@@ -38,7 +38,7 @@ resilience4j:
     instances:
       customer:
         slidingWindowType: COUNT_BASED
-        failureRateThreshold: '50.Of'
+        failureRateThreshold: '50.0f'
         automaticTransitionFromOpenToHalfOpenEnabled: 'true'
         allowHealthIndicatorToFail: 'false'
         registerHealthIndicator: 'true'
