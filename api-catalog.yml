@@ -46,12 +46,8 @@ resilience4j:
       movies:
         maxAttempts: "3"
         waitDuration: "1000"
-        retryExceptions:
-          - feign.FeignException$InternalServerError
-          - java.net.UnknownHostException
+        retryExceptions[0]: feign.FeignException$InternalServerError
       series:
         maxAttempts: "3"
         waitDuration: "1000"
-        retryExceptions:
-          - feign.FeignException$InternalServerError
-          - java.net.UnknownHostException
+        retryExceptions[0]: feign.FeignException$InternalServerError
