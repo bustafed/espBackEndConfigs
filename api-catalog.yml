@@ -48,10 +48,10 @@ resilience4j:
         waitDuration: "1000"
         retryExceptions:
           - feign.FeignException$InternalServerError
-          - Java.net.UnknownHostException
+          - java.net.UnknownHostException
       series:
         maxAttempts: "3"
         waitDuration: "1000"
         retryExceptions:
           - feign.FeignException$InternalServerError
-          - Java.net.UnknownHostException
+          - java.net.UnknownHostException
