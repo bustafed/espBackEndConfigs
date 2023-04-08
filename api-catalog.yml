@@ -25,29 +25,29 @@ resilience4j:
     instances:
       series:
         slidingWindowType: COUNT_BASED
-        failureRateThreshold: "40"
-        automaticTransitionFromOpenToHalfOpenEnabled: "true"
-        allowHealthIndicatorToFail: "false"
-        registerHealthIndicator: "true"
-        slidingWindowSize: "10"
-        permittedNumberOfCallsInHalfOpenState: "3"
-        waitDurationInOpenState: "15000"
+        failureRateThreshold: '40'
+        automaticTransitionFromOpenToHalfOpenEnabled: 'true'
+        allowHealthIndicatorToFail: 'false'
+        registerHealthIndicator: 'true'
+        slidingWindowSize: '10'
+        permittedNumberOfCallsInHalfOpenState: '3'
+        waitDurationInOpenState: '15000'
       movies:
         slidingWindowType: COUNT_BASED
-        failureRateThreshold: "40"
-        automaticTransitionFromOpenToHalfOpenEnabled: "true"
-        allowHealthIndicatorToFail: "false"
-        registerHealthIndicator: "true"
-        slidingWindowSize: "10"
-        permittedNumberOfCallsInHalfOpenState: "3"
-        waitDurationInOpenState: "15000"
+        failureRateThreshold: '40'
+        automaticTransitionFromOpenToHalfOpenEnabled: 'true'
+        allowHealthIndicatorToFail: 'false'
+        registerHealthIndicator: 'true'
+        slidingWindowSize: '10'
+        permittedNumberOfCallsInHalfOpenState: '3'
+        waitDurationInOpenState: '15000'
   retry:
     instances:
       movies:
-        maxAttempts: "3"
-        waitDuration: "1000"
+        maxAttempts: '3'
+        waitDuration: '1000'
         retryExceptions[0]: feign.FeignException$InternalServerError
       series:
-        maxAttempts: "3"
-        waitDuration: "1000"
+        maxAttempts: '3'
+        waitDuration: '1000'
         retryExceptions[0]: feign.FeignException$InternalServerError
