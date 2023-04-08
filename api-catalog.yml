@@ -11,19 +11,19 @@ spring:
       database: catalog
       port: 27017
 eureka:
-   instance:
-     hostname: localhost
-     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
-   client:
-      registerWithEureka: true
-      fetchRegistry: true
-      serviceUrl:
-        defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
         
 resilience4j:
   circuitbreaker:
-    configs:
-      default:
+    instances:
+      series:
         slidingWindowType: COUNT_BASED
         failureRateThreshold: '40'
         automaticTransitionFromOpenToHalfOpenEnabled: 'true'
@@ -32,19 +32,22 @@ resilience4j:
         slidingWindowSize: '10'
         permittedNumberOfCallsInHalfOpenState: '3'
         waitDurationInOpenState: '15000'     
-    instances:
-      series:
-        baseConfig: default
       movies:
-        baseConfig: default
+        slidingWindowType: COUNT_BASED
+        failureRateThreshold: '40'
+        automaticTransitionFromOpenToHalfOpenEnabled: 'true'
+        allowHealthIndicatorToFail: 'false'
+        registerHealthIndicator: 'true'
+        slidingWindowSize: '10'
+        permittedNumberOfCallsInHalfOpenState: '3'
+        waitDurationInOpenState: '15000'     
   retry:
-    configs:
-      default:
+    instances:
+      movies:
         maxAttempts: '3'
         waitDuration: '1000'
         retryExceptions[0]: feign.FeignException$InternalServerError
-    instances:
-      movies:
-        baseConfig: default
       series:
-        baseConfig: default
+        maxAttempts: '3'
+        waitDuration: '1000'
+        retryExceptions[0]: feign.FeignException$InternalServerError
