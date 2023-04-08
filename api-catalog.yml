@@ -34,9 +34,9 @@ resilience4j:
         waitDurationInOpenState: '15000'     
     instances:
       series:
-        base-config: default
+        baseConfig: default
       movies:
-        base-config: default
+        baseConfig: default
   retry:
     configs:
       default:
@@ -45,6 +45,6 @@ resilience4j:
         retryExceptions[0]: feign.FeignException$InternalServerError
     instances:
       movies:
-        base-config: default
+        baseConfig: default
       series:
-        base-config: default
+        baseConfig: default
